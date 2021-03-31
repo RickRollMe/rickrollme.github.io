@@ -19,11 +19,17 @@
 <body>
 
     <center class="center-vert">
-        <h2 id="name">Test</h2>
+        <h2 id="name"></h2>
     </center>
 
     <script>
-        fetch()
+        fetch("https://raw.githubusercontent.com/RickRollMe/rickrollme.github.io/main/rickrolls.txt").then(response => {
+            response.text().then(linesunsplit => {
+                let lines = linesunsplit.split(/\r\n|\r|\n/); 
+                let line = lines[Math.floor(Math.random() * lines.length)]
+                document.getElementById("name").innerText = line;
+            })
+        });
     </script>
 </body>
 </html>
