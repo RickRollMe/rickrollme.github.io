@@ -23,7 +23,7 @@
     </center>
 
     <script>
-        fetch("https://raw.githubusercontent.com/RickRollMe/rickrollme.github.io/main/rickrolls.txt").then(response => {
+        fetch("https://rickrollme.github.io/rickrolls.txt").then(response => {
             response.text().then(linesunsplit => {
                 let lines = linesunsplit.split(/\r\n|\r|\n/); 
                 let line = lines[Math.floor(Math.random() * lines.length)]
