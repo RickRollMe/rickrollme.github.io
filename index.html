@@ -27,7 +27,11 @@
             response.text().then(linesunsplit => {
                 let lines = linesunsplit.split(/\r\n|\r|\n/); 
                 let line = lines[Math.floor(Math.random() * lines.length)]
-                document.getElementById("name").innerText = line;
+                if(line != ""){
+                    document.getElementById("name").innerHtml = line;
+                }else{
+                    window.location.reload(true);
+                }
             })
         });
     </script>
